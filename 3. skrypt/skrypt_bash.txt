@@ -1,0 +1,118 @@
+#!/bin/bash
+#top 10 testow/1M populacji - ostatni dzien
+
+cut -d';' -f2,13 10.csv > 10testy1.csv
+(head -n 2 10testy1.csv && tail -n +3 10testy1.csv |sort -t';' -k2 -r -n) > 10testy2.csv
+head -12 10testy2.csv > 10testy_Wynik.dat
+rm 10testy1.csv 10testy2.csv
+
+#top 10 testow - ostatni minus pierwszy (przyrost w ciagu osmiu dni)
+
+cut -d';' -f2,12 3.csv > 3tottesty1.csv
+(head -n 2 3tottesty1.csv && tail -n +3 3tottesty1.csv |sort -t';' -k2 -r -n) > 3tottesty2.csv
+head -12 3tottesty2.csv > 3tottesty_Wynik.dat
+rm 3tottesty1.csv 3tottesty2.csv
+
+cut -d';' -f2,12 10.csv > 10tottesty1.csv
+(head -n 2 10tottesty1.csv && tail -n +3 10tottesty1.csv |sort -t';' -k2 -r -n) > 10tottesty2.csv
+head -12 10tottesty2.csv > 10tottesty_Wynik.dat
+rm 10tottesty1.csv 10tottesty2.csv
+
+#top 10 zgonow/1M populacji - ostatni dzien
+
+cut -d';' -f2,11 10.csv > 10zgony1.csv
+(head -n 2 10zgony1.csv && tail -n +3 10zgony1.csv |sort -t';' -k2 -r -n) > 10zgony2.csv
+head -12 10zgony2.csv > 10zgony_Wynik.dat
+rm 10zgony1.csv 10zgony2.csv
+
+#top 10 zgonow ogolem - ostatni dzien
+
+cut -d';' -f2,5 10.csv > 10totzgony1.csv
+(head -n 2 10totzgony1.csv && tail -n +3 10totzgony1.csv |sort -t';' -k2 -r -n) > 10totzgony2.csv
+head -12 10totzgony2.csv > 10totzgony_Wynik.dat
+rm 10totzgony1.csv 10totzgony2.csv
+
+#top 10 zgonow ogolem w osiem dni - ostatni minus pierwszy (przyrost w ciagu osmiu dni)
+
+cut -d';' -f2,5 3.csv > 3totzgony1.csv
+(head -n 2 3totzgony1.csv && tail -n +3 3totzgony1.csv |sort -t';' -k2 -r -n) > 3totzgony2.csv
+head -12 3totzgony2.csv > 3totzgony_Wynik.dat
+rm 3totzgony1.csv 3totzgony2.csv
+
+#top 10 zgonow przyrost - zmiana w kazdy dzien 
+
+cut -d';' -f2,5 4.csv > 4totzgony1.csv
+(head -n 2 4totzgony1.csv && tail -n +3 4totzgony1.csv |sort -t';' -k2 -r -n) > 4totzgony2.csv
+head -12 4totzgony2.csv > 4totzgony_Wynik.dat
+rm 4totzgony1.csv 4totzgony2.csv
+
+cut -d';' -f2,5 5.csv > 5totzgony1.csv
+(head -n 2 5totzgony1.csv && tail -n +3 5totzgony1.csv |sort -t';' -k2 -r -n) > 5totzgony2.csv
+head -12 5totzgony2.csv > 5totzgony_Wynik.dat
+rm 5totzgony1.csv 5totzgony2.csv
+
+cut -d';' -f2,5 6.csv > 6totzgony1.csv
+(head -n 2 6totzgony1.csv && tail -n +3 6totzgony1.csv |sort -t';' -k2 -r -n) > 6totzgony2.csv
+head -12 6totzgony2.csv > 6totzgony_Wynik.dat
+rm 6totzgony1.csv 6totzgony2.csv
+
+cut -d';' -f2,5 7.csv > 7totzgony1.csv
+(head -n 2 7totzgony1.csv && tail -n +3 7totzgony1.csv |sort -t';' -k2 -r -n) > 7totzgony2.csv
+head -12 7totzgony2.csv > 7totzgony_Wynik.dat
+rm 7totzgony1.csv 7totzgony2.csv
+
+cut -d';' -f2,5 8.csv > 8totzgony1.csv
+(head -n 2 8totzgony1.csv && tail -n +3 8totzgony1.csv |sort -t';' -k2 -r -n) > 8totzgony2.csv
+head -12 8totzgony2.csv > 8totzgony_Wynik.dat
+rm 8totzgony1.csv 8totzgony2.csv
+
+cut -d';' -f2,5 9.csv > 9totzgony1.csv
+(head -n 2 9totzgony1.csv && tail -n +3 9totzgony1.csv |sort -t';' -k2 -r -n) > 9totzgony2.csv
+head -12 9totzgony2.csv > 9totzgony_Wynik.dat
+rm 9totzgony1.csv 9totzgony2.csv
+
+#top 10 przypadkow ogolem - ostatni dzien
+
+cut -d';' -f2,3 10.csv > 10totprzypadki1.csv
+(head -n 2 10totprzypadki1.csv && tail -n +3 10totprzypadki1.csv |sort -t';' -k2 -r -n) > 10totprzypadki2.csv
+head -12 10totprzypadki2.csv > 10totprzypadki_Wynik.dat
+rm 10totprzypadki1.csv 10totprzypadki2.csv
+
+#top 10 przypadkow ogolem w osiem dni - ostatni minus pierwszy (przyrost w ciagu osmiu dni)
+
+cut -d';' -f2,3 3.csv > 3totprzypadki1.csv
+(head -n 2 3totprzypadki1.csv && tail -n +3 3totprzypadki1.csv |sort -t';' -k2 -r -n) > 3totprzypadki2.csv
+head -12 3totprzypadki2.csv > 3totprzypadki_Wynik.dat
+rm 3totprzypadki1.csv 3totprzypadki2.csv
+
+#top 10 przypadkow przyrosty- zmiana w kazdy dzien 
+
+cut -d';' -f2,3 4.csv > 4totprzypadki1.csv
+(head -n 2 4totprzypadki1.csv && tail -n +3 4totprzypadki1.csv |sort -t';' -k2 -r -n) > 4totprzypadki2.csv
+head -12 4totprzypadki2.csv > 4totprzypadki_Wynik.dat
+rm 4totprzypadki1.csv 4totprzypadki2.csv
+
+cut -d';' -f2,3 5.csv > 5totprzypadki1.csv
+(head -n 2 5totprzypadki1.csv && tail -n +3 5totprzypadki1.csv |sort -t';' -k2 -r -n) > 5totprzypadki2.csv
+head -12 5totprzypadki2.csv > 5totprzypadki_Wynik.dat
+rm 5totprzypadki1.csv 5totprzypadki2.csv
+
+cut -d';' -f2,3 6.csv > 6totprzypadki1.csv
+(head -n 2 6totprzypadki1.csv && tail -n +3 6totprzypadki1.csv |sort -t';' -k2 -r -n) > 6totprzypadki2.csv
+head -12 6totprzypadki2.csv > 6totprzypadki_Wynik.dat
+rm 6totprzypadki1.csv 6totprzypadki2.csv
+
+cut -d';' -f2,3 7.csv > 7totprzypadki1.csv
+(head -n 2 7totprzypadki1.csv && tail -n +3 7totprzypadki1.csv |sort -t';' -k2 -r -n) > 7totprzypadki2.csv
+head -12 7totprzypadki2.csv > 7totprzypadki_Wynik.dat
+rm 7totprzypadki1.csv 7totprzypadki2.csv
+
+cut -d';' -f2,3 8.csv > 8totprzypadki1.csv
+(head -n 2 8totprzypadki1.csv && tail -n +3 8totprzypadki1.csv |sort -t';' -k2 -r -n) > 8totprzypadki2.csv
+head -12 8totprzypadki2.csv > 8totprzypadki_Wynik.dat
+rm 8totprzypadki1.csv 8totprzypadki2.csv
+
+cut -d';' -f2,3 9.csv > 9totprzypadki1.csv
+(head -n 2 9totprzypadki1.csv && tail -n +3 9totprzypadki1.csv |sort -t';' -k2 -r -n) > 9totprzypadki2.csv
+head -12 9totprzypadki2.csv > 9totprzypadki_Wynik.dat
+rm 9totprzypadki1.csv 9totprzypadki2.csv

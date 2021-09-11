@@ -1,0 +1,150 @@
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output 'przyrost_testy.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą ilością testów (przyrost w ciągu ośmiu dni)"        
+set xlabel "Kraje"                                                
+set ylabel "Ilość testów"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "testy osiem dni.dat" every ::0 using 2:xtic(1) with boxes lt rgb "yellow"    
+ 
+
+
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output 'przyrost_przypadki.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą liczbą przypadków zakażeń (przyrost w ciągu ośmiu dni)"        
+set xlabel "Kraje"                                                
+set ylabel "Liczba zakażonych"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "przypadki osiem dni.dat" every ::0 using 2:xtic(1) with boxes lt rgb "green"  
+
+
+
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output 'przyrost_zgony.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą liczbą zgonów (przyrost w ciągu ośmiu dni)"        
+set xlabel "Kraje"                                                
+set ylabel "Liczba zgonów"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "zgony osiem dni.dat" every ::0 using 2:xtic(1) with boxes lt rgb "blue"  
+
+
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output '10testy_Wynik.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą ilością testów/1M populacji"        
+set xlabel "Kraje"                                                
+set ylabel "Ilość testów"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "10testy_Wynik.dat" every ::0 using 2:xtic(1) with boxes lt rgb "yellow"  
+
+
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output '10totprzypadki_Wynik.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą liczbą przypadków zakażeń (ogółem)"        
+set xlabel "Kraje"                                                
+set ylabel "Liczba zakażonych"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "10totprzypadki_Wynik.dat" every ::0 using 2:xtic(1) with boxes lt rgb "green"
+
+
+
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output '10zgony_Wynik.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą liczbą zgonów/1M populacji"        
+set xlabel "Kraje"                                                
+set ylabel "Liczba zgonów"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "10zgony_Wynik.dat" every ::0 using 2:xtic(1) with boxes lt rgb "blue"
+
+
+reset
+set terminal pngcairo size 1500,500 
+unset key  
+set output '10totzgony_Wynik.png' 
+set datafile separator ';' 
+set boxwidth 0.5
+set style fill solid 0.50                                             
+set title "Kraje z największą liczbą zgonów (ogółem)"        
+set xlabel "Kraje"                                                
+set ylabel "Liczba zgonów"                                         
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11                                                  
+plot "10totzgony_Wynik.dat" every ::0 using 2:xtic(1) with boxes 
+
+
+reset
+set terminal pngcairo size 1500,1000
+set output 'przypadki5_8dni.png' #nazwa
+set key autotitle columnheader outside right 
+set datafile separator ';'
+set title "Kraje z największą liczbą przypadków zakażeń"
+set ylabel 'Liczba zakażonych'
+set xlabel 'Dni'
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11
+plot for [i=2:*] "przypadki-dzien-dzien.dat" using 0:i:xtic(1) with lines ls i lw 2
+
+
+reset
+set terminal pngcairo size 1500,1000
+set output 'zgony_8dni.png' #nazwa
+set key autotitle columnheader outside right 
+set datafile separator ';'
+set title "Kraje z największą liczbą zgonów"
+set ylabel 'Liczba zgonów'
+set xlabel 'Dni'
+set arrow from graph 1,0 to graph 1.02,0 size screen 0.025,15,60 \
+filled ls 11                                                  
+set arrow from graph 0,1 to graph 0,1.05 size screen 0.025,15,60 \
+filled ls 11
+plot for [i=2:*] "zgony-dzien-dzien.dat" using 0:i:xtic(1) with lines ls i lw 2
